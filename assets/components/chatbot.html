@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Window</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <!-- Chatbot Window -->
+    <div class="chatbot-window">
+        <div class="chatbot-header">
+            <span class="close-btn">&times;</span>
+            <h3>How can I assist you today?</h3>
+        </div>
+        <div class="chatbot-body">
+            <div class="messages" id="message-container">
+                <!-- Chat messages will appear here -->
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="user-input" placeholder="Type your message..." />
+                <button id="send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot Button (Triggers Chatbot Window) -->
+    <button class="chatbot-btn" onclick="openChatbot()">💬</button>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

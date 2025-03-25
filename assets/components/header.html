@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdaVerse AI</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and HTML */
+        html, body {
+            font-family: Arial, sans-serif;
+            height: 100%;
+            margin: 0;
+            background-color: #f4f4f4;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        /* Header Styles */
+        .header-master {
+            background-color: #0044cc;
+            padding: 20px 0;
+            color: white;
+            border-bottom: 5px solid #ccc;
+        }
+
+        .header-main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-section {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .brand-logo {
+            width: 50px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .brand-name {
+            font-size: 1.8em;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .mobile-toggle {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 30px;
+            display: none; /* Hidden by default, will show in mobile view */
+            cursor: pointer;
+        }
+
+        .primary-nav {
+            display: flex;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-link {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #ff6600; /* Orange color on hover */
+        }
+
+        /* Mobile Navigation */
+        .mobile-menu {
+            background-color: #0044cc;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 100;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .mobile-menu-container {
+            width: 80%;
+            background-color: #222;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .mobile-close {
+            background: none;
+            color: white;
+            border: none;
+            font-size: 40px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+
+        .mobile-nav-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .mobile-nav-link {
+            display: block;
+            padding: 10px 0;
+            text-decoration: none;
+            color: white;
+            font-size: 1.5em;
+            border-bottom: 1px solid #444;
+        }
+
+        .mobile-nav-link:hover {
+            background-color: #ff6600;
+            color: white;
+        }
+
+        /* Futuristic Header Styles */
+        .header-content h1 {
+            position: relative;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .header-content h1::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #9b59b6, #ff6600);
+            transform: translateY(-50%);
+            animation: line-animation 2s infinite ease-in-out;
+        }
+
+        @keyframes line-animation {
+            0% {
+                width: 0;
+                left: 50%;
+            }
+            50% {
+                width: 100%;
+                left: 0;
+            }
+            100% {
+                width: 0;
+                left: 50%;
+            }
+        }
+
+        .nav-link:hover {
+            color: #ff6600; /* Orange color */
+        }
+
+        /* Mobile Menu Button Toggle */
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+
+            .primary-nav {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .header-main {
+                padding: 0 10px;
+            }
+        }
+
+        /* Ensure page is centered and responsive */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Content adjustments for responsiveness */
+        .brand-section, .nav-link {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+<header class="header-master">
+    <div class="header-main">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo and Brand Name -->
+                <a href="../pages/index.html" class="brand-section" aria-label="AdaVerse Homepage">
+                    <img src="../assets/images/logo.svg" alt="AdaVerse Logo" class="brand-logo">
+                    <span class="brand-name">AdaVerse</span>
+                </a>
+
+                <!-- Mobile Menu Toggle Button -->
+                <button type="button" class="mobile-toggle" aria-label="Toggle Mobile Menu" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleMobileMenu()">
+                    <span class="toggle-icon">&#9776;</span>
+                </button>
+
+                <!-- Primary Navigation -->
+                <nav class="primary-nav" aria-label="Primary Navigation">
+                    <ul class="nav-list">
+                        <li><a href="../pages/index.html" class="nav-link">Home</a></li>
+                        <li><a href="../pages/about.html" class="nav-link">About</a></li>
+                        <li><a href="../pages/ai-services.html" class="nav-link">AI Services</a></li>
+                        <li><a href="../pages/digital-marketing.html" class="nav-link">Digital Marketing</a></li>
+                        <li><a href="../pages/partnerships.html" class="nav-link">Partnerships</a></li>
+                        <li><a href="../pages/blog.html" class="nav-link">Blog</a></li>
+                        <li><a href="../pages/contact.html" class="nav-link">Contact</a></li>
+                        <li><a href="../pages/privacy-policy.html" class="nav-link">Privacy Policy</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+        <div class="mobile-menu-container">
+            <button type="button" class="mobile-close" aria-label="Close Mobile Menu" onclick="toggleMobileMenu()">&times;</button>
+
+            <nav class="mobile-nav" aria-label="Mobile Navigation">
+                <ul class="mobile-nav-list">
+                    <li><a href="../pages/index.html" class="mobile-nav-link">Home</a></li>
+                    <li><a href="../pages/about.html" class="mobile-nav-link">About</a></li>
+                    <li><a href="../pages/ai-services.html" class="mobile-nav-link">AI Services</a></li>
+                    <li><a href="../pages/digital-marketing.html" class="mobile-nav-link">Digital Marketing</a></li>
+                    <li><a href="../pages/partnerships.html" class="mobile-nav-link">Partnerships</a></li>
+                    <li><a href="../pages/blog.html" class="mobile-nav-link">Blog</a></li>
+                    <li><a href="../pages/contact.html" class="mobile-nav-link">Contact</a></li>
+                    <li><a href="../pages/privacy-policy.html" class="mobile-nav-link">Privacy Policy</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<script>
+    // Toggle Mobile Menu visibility
+    function toggleMobileMenu() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileToggleButton = document.querySelector('.mobile-toggle');
+        
+        const isExpanded = mobileToggleButton.getAttribute('aria-expanded') === 'true';
+        mobileToggleButton.setAttribute('aria-expanded', !isExpanded);
+        
+        if (isExpanded) {
+            mobileMenu.style.display = 'none';
+        } else {
+            mobileMenu.style.display = 'flex';
+        }
+    }
+</script>
+
+</body>
+</html>

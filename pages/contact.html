@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - AdaVerse</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <style>
+        /* Main Contact Page Styling */
+        .contact-container {
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .contact-form {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1em;
+        }
+
+        .contact-form button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1em;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #0056b3;
+        }
+
+        .contact-info {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .contact-info h2 {
+            font-size: 2.2em;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .social-media ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-media li a {
+            font-size: 1.2em;
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        .social-media li a:hover {
+            color: #007bff;
+        }
+
+        /* Image Styling */
+        .image-container {
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section (Loaded dynamically) -->
+    <div id="header-container"></div>
+
+    <!-- Main Content -->
+    <main class="contact-container">
+        <h1>Contact Us</h1>
+        <p>Ready to elevate your brand? Connect with our experts today.</p>
+
+        <h2>Let’s Build Your Brand’s Future</h2>
+
+        <section class="contact-form">
+            <form action="/submit-form" method="POST">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <!-- Contact Information -->
+        <section class="contact-info">
+            <h2>Our Location</h2>
+            <p>Based in Atlanta, GA, serving clients worldwide.</p>
+            
+            <h2>Email Us</h2>
+            <p><strong>Email:</strong> <a href="mailto:getintouch@adaverse.tech">getintouch@adaverse.tech</a></p>
+        </section>
+
+        <!-- Image Section -->
+        <div class="image-container">
+            <img src="images/contact-us.jpg" alt="Contact Us Image" />
+        </div>
+
+        <!-- Social Media Section -->
+        <section class="social-media">
+            <h3>Follow Us</h3>
+            <ul>
+                <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+                <li><a href="https://www.linkedin.com" target="_blank">LinkedIn</a></li>
+                <li><a href="https://x.com" target="_blank">X</a></li>
+                <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+                <li><a href="https://www.tiktok.com" target="_blank">TikTok</a></li>
+                <li><a href="https://www.youtube.com" target="_blank">YouTube</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer Section (Loaded dynamically) -->
+    <div id="footer-container"></div>
+
+    <script src="scripts.js"></script>
+
+    <!-- JavaScript to load header and footer dynamically -->
+    <script>
+        // Function to load external HTML into a div
+        function loadHTML(file, elementId) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading file:', error));
+        }
+
+        // Load header and footer dynamically
+        loadHTML('../assets/components/header.html', 'header-container');
+        loadHTML('../assets/components/footer.html', 'footer-container');
+    </script>
+</body>
+</html>

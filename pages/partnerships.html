@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partnership - AdaVerse AI</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <style>
+        /* Additional custom styling for creative layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .partnership-container {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .partnership-container h2, .partnership-container h3 {
+            text-align: center;
+            color: #333;
+        }
+
+        .partnership-container p, .partnership-container ul {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #666;
+            text-align: center;
+        }
+
+        .partnership-container ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .partnership-container ul li {
+            margin-bottom: 15px;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 400px;
+            margin: 40px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #ddd; 
+            border-radius: 10px;
+            background-color: #f5f5f5;
+        }
+
+        .image-placeholder img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .partnership-container a {
+            text-decoration: none;
+            color: #9b59b6; /* Lavender color */
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .partnership-container a:hover {
+            color: #ff6600; /* Orange color on hover */
+        }
+
+        .footer-container {
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section dynamically loaded here -->
+    <div id="header-container"></div>
+
+    <!-- Partnership Content -->
+    <div class="partnership-container">
+        <h2>Why Partner with AdaVerse AI?</h2>
+        <p>AdaVerse AI isn't just a platform; it's a gateway to the future of customer engagement. With us, you can open doors to new possibilities, drive innovation, and set your business apart in an ever-evolving digital landscape.</p>
+
+        <!-- Image Placeholder -->
+        <div class="image-placeholder">
+            <img src="images/partnership-placeholder.jpg" alt="Partnership Growth" />
+        </div>
+
+        <h3>The Possibilities Are Endless</h3>
+        <ul>
+            <li>Gain access to next-level AI technology and expertise, unlocking a world of innovation.</li>
+            <li>Collaborate on custom solutions that are designed with your business in mind.</li>
+            <li>Expand your reach with exclusive co-marketing opportunities, pushing boundaries.</li>
+            <li>Empower your team with dedicated training and support to fuel long-term success.</li>
+        </ul>
+
+        <!-- Image Placeholder -->
+        <div class="image-placeholder">
+            <img src="images/innovation-collaboration.jpg" alt="Innovation and Collaboration" />
+        </div>
+
+        <h3>Tailored Partnership Models</h3>
+        <p>We believe in creating partnerships that are as unique as your business. Explore different models that fit your vision:</p>
+        <ul>
+            <li>Technology Partnerships</li>
+            <li>Channel Partnerships</li>
+            <li>Referral Partnerships</li>
+            <li>Strategic Alliances</li>
+        </ul>
+
+        <p>If you’re ready to explore the future of AI-driven growth with us, <a href="/contact">reach out</a> and let’s start the conversation.</p>
+        
+        <!-- Final Image Placeholder -->
+        <div class="image-placeholder">
+            <img src="images/final-call-to-action.jpg" alt="Future of Partnerships" />
+        </div>
+    </div>
+
+    <!-- Footer Section dynamically loaded here -->
+    <div id="footer-container"></div>
+
+    <script src="scripts.js"></script>
+
+    <!-- JavaScript to load header and footer dynamically -->
+    <script>
+        // Function to load external HTML into a div
+        function loadHTML(file, elementId) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading file:', error));
+        }
+
+        // Load header and footer dynamically
+        loadHTML('../assets/components/header.html', 'header-container');
+        loadHTML('../assets/components/footer.html', 'footer-container');
+    </script>
+</body>
+</html>

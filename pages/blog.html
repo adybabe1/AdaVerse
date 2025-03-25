@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - AdaVerse AI</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <style>
+        /* Additional Styles for Image Space */
+        .blog-container {
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .blog-post {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+        }
+
+        .post-title {
+            font-size: 2em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .post-meta {
+            font-size: 0.9em;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .post-excerpt {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            font-size: 1.1em;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        .image-placeholder {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-title {
+            font-size: 2.5em;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .blog-subtitle {
+            font-size: 1.2em;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section (Loaded dynamically) -->
+    <div id="header-container"></div>
+
+    <!-- Blog Content -->
+    <div class="blog-container">
+        <h1 class="blog-title">AdaVerse AI Blog</h1>
+        <p class="blog-subtitle">Exploring the Future of Artificial Intelligence, Machine Learning, and Smart Technologies</p>
+
+        <div class="blog-post">
+            <h2 class="post-title">Understanding the Future of AI in Customer Service</h2>
+            <p class="post-meta">Posted on March 25, 2025 by <strong>AdaVerse AI</strong></p>
+            <p class="post-excerpt">AI is transforming the customer service landscape, enabling businesses to provide 24/7 support with personalized experiences. In this post, we explore how AI-driven chatbots are improving customer interactions...</p>
+
+            <!-- Image Placeholder for the Blog Post -->
+            <div class="image-placeholder">
+                <img src="images/ai-customer-service.jpg" alt="AI in Customer Service" />
+            </div>
+
+            <a href="/blog/post-1" class="read-more">Read more &raquo;</a>
+        </div>
+
+        <div class="blog-post">
+            <h2 class="post-title">The Role of Machine Learning in Smart Grids</h2>
+            <p class="post-meta">Posted on March 18, 2025 by <strong>AdaVerse AI</strong></p>
+            <p class="post-excerpt">Machine learning plays a crucial role in smart grid technology, particularly in identifying energy consumption patterns and preventing cyber threats. Learn how these technologies are being leveraged in the fight against energy theft...</p>
+
+            <!-- Image Placeholder for the Blog Post -->
+            <div class="image-placeholder">
+                <img src="images/machine-learning-smart-grid.jpg" alt="Machine Learning in Smart Grids" />
+            </div>
+
+            <a href="/blog/post-2" class="read-more">Read more &raquo;</a>
+        </div>
+    </div>
+
+    <!-- Footer Section (Loaded dynamically) -->
+    <div id="footer-container"></div>
+
+    <script src="scripts.js"></script>
+
+    <!-- JavaScript to load header and footer dynamically -->
+    <script>
+        // Function to load external HTML into a div
+        function loadHTML(file, elementId) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading file:', error));
+        }
+
+        // Load header and footer dynamically
+        loadHTML('../assets/components/header.html', 'header-container');
+        loadHTML('../assets/components/footer.html', 'footer-container');
+    </script>
+</body>
+</html>
