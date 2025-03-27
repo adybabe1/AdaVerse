@@ -3,208 +3,317 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Marketing Blog - AdaVerse</title>
+    <title>Synthara AI-Powered Digital Marketing - AdaVerse</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
     <style>
-        /* Custom styling for a fun and creative layout */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            background-color: #111111;
+            color: #E0E0E0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        .blog-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        h1 {
-            font-size: 3.5em;
+        /* Hero Section */
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #8e2de2 30%, #4a00e0 100%);
+            padding: 150px 30px;
             text-align: center;
-            color: #333;
-            margin-bottom: 30px;
-            font-weight: bold;
+            height: 100vh;
+            box-shadow: 0 0 60px rgba(255, 215, 0, 0.5);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 900px;
+        }
+
+        .hero-section h1 {
+            font-size: 5rem;
+            color: #FFD700;
             text-transform: uppercase;
+            text-shadow: 0 0 15px #FFD700, 0 0 25px #4a00e0;
+            margin-bottom: 20px;
+            font-weight: 700;
         }
 
-        .blog-posts {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
+        .hero-section p {
+            font-size: 1.5rem;
+            color: #C0C0C0;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        /* Call-to-action Buttons */
+        .cta-buttons a {
+            margin: 20px;
+            padding: 18px 35px;
+            background: linear-gradient(45deg, #FFD700, #FF6347);
+            color: #000000;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.7);
+            transition: all 0.3s ease-in-out;
+            display: inline-block;
+        }
+
+        .cta-buttons a:hover {
+            background: linear-gradient(45deg, #FF6347, #FFD700);
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(255, 99, 71, 0.7);
+        }
+
+        /* About Section */
+        .about-section {
+            background-color: #1c1c1c;
+            padding: 100px 30px;
+            text-align: center;
+            color: #C0C0C0;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .about-section h2 {
+            font-size: 3.5rem;
+            color: #FFD700;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+        }
+
+        .about-section p {
+            font-size: 1.4rem;
+            line-height: 1.8;
             margin-bottom: 50px;
+            font-weight: 300;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        .blog-post {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            transition: transform 0.3s ease-in-out;
+        .about-section .highlight {
+            color: #FFD700;
+            font-weight: bold;
         }
 
-        .blog-post:hover {
-            transform: translateY(-10px);
+        /* AI-Powered Digital Marketing Section */
+        .marketing-section {
+            background-color: #333333;
+            padding: 100px 30px;
+            text-align: center;
+            color: #C0C0C0;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
-        .blog-post img {
+        .marketing-section h2 {
+            font-size: 3.5rem;
+            color: #FFD700;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+        }
+
+        .marketing-section p {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            margin-bottom: 50px;
+            font-weight: 300;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .marketing-cards {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .marketing-card {
+            background-color: #2e2e2e;
+            border-radius: 15px;
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+            color: #FFD700;
+            margin-bottom: 30px;
+        }
+
+        .marketing-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #FFD700;
+        }
+
+        .marketing-card p {
+            font-size: 1.2rem;
+            color: #E0E0E0;
+            font-weight: 300;
+        }
+
+        .marketing-card img {
             width: 100%;
             height: auto;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            object-fit: cover;
-        }
-
-        .blog-post h2 {
-            font-size: 2.2em;
-            color: #333;
-            margin: 15px 0;
-            font-weight: bold;
-        }
-
-        .blog-post .author {
-            font-size: 1.1em;
-            color: #666;
-        }
-
-        .blog-post .date {
-            font-size: 1.1em;
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .read-more {
-            display: inline-block;
-            color: #007bff;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2em;
-            margin-top: 15px;
-            border-bottom: 2px solid #007bff;
-            transition: all 0.3s ease;
-        }
-
-        .read-more:hover {
-            color: #0056b3;
-            border-color: #0056b3;
-        }
-
-        .newsletter {
-            background-color: #fff;
-            padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .marketing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Video Section */
+        .video-section {
+            background-color: #111111;
+            padding: 100px 30px;
             text-align: center;
+            color: #C0C0C0;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
-        .newsletter h3 {
-            font-size: 2.5em;
-            color: #333;
-            margin-bottom: 20px;
+        .video-section h2 {
+            font-size: 3.5rem;
+            color: #FFD700;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
         }
 
-        .newsletter form input {
-            padding: 15px;
-            width: 60%;
-            font-size: 1.2em;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            transition: border-color 0.3s ease;
-        }
-
-        .newsletter form input:focus {
-            border-color: #007bff;
-            outline: none;
-        }
-
-        .newsletter form button {
-            padding: 15px 30px;
-            background-color: #007bff;
-            color: white;
+        .video-section iframe {
+            width: 100%;
+            height: 500px;
             border: none;
-            border-radius: 5px;
-            font-size: 1.3em;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+            border-radius: 15px;
         }
 
-        .newsletter form button:hover {
-            background-color: #0056b3;
+        /* Footer */
+        .footer {
+            background-color: #111111;
+            padding: 40px 30px;
+            text-align: center;
+            color: #C0C0C0;
+            font-size: 1.2rem;
+        }
+
+        .footer p {
+            font-size: 1.1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .marketing-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .marketing-card {
+                width: 80%;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header Section (Loaded dynamically) -->
-    <div id="header-container"></div>
+    <div id="header-placeholder"></div>
 
-    <!-- Main Content -->
-    <main class="blog-container">
-        <h1>Digital Marketing Insights</h1>
-
-        <section class="blog-posts">
-            <article class="blog-post">
-                <h2>The Power of Social Media Marketing</h2>
-                <p class="author">By Adaora Onwumelu</p>
-                <p class="date">March 24, 2025</p>
-                <img src="images/social-media-marketing.jpg" alt="Social Media Marketing">
-                <p>Social media marketing is one of the most effective strategies for reaching a wide audience. In this post, we'll explore how to maximize your engagement on platforms like Instagram, Twitter, and TikTok. Learn about content strategies, audience targeting, and tools you can use to track performance...</p>
-                <a href="/blog/social-media-marketing" class="read-more">Read More</a>
-            </article>
-
-            <article class="blog-post">
-                <h2>Effective SEO Strategies for 2025</h2>
-                <p class="author">By Adaora Onwumelu</p>
-                <p class="date">March 22, 2025</p>
-                <img src="images/seo-strategies.jpg" alt="SEO Strategies">
-                <p>Search engine optimization (SEO) is essential for digital marketing success. In this post, I’ll share the latest SEO strategies, from keyword optimization to technical SEO and on-page improvements. These insights can help you improve your website’s rankings in Google and other search engines...</p>
-                <a href="/blog/seo-strategies-2025" class="read-more">Read More</a>
-            </article>
-
-            <article class="blog-post">
-                <h2>How Influencer Marketing Is Evolving</h2>
-                <p class="author">By Adaora Onwumelu</p>
-                <p class="date">March 20, 2025</p>
-                <img src="images/influencer-marketing.jpg" alt="Influencer Marketing">
-                <p>Influencer marketing has taken over digital campaigns in recent years. But as the industry matures, brands are looking for more than just a large following. This article discusses how to identify and collaborate with the right influencers to create authentic and engaging content...</p>
-                <a href="/blog/influencer-marketing-evolution" class="read-more">Read More</a>
-            </article>
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Welcome to Synthara: AI-Powered Digital Marketing</h1>
+                <p>Revolutionizing digital marketing strategies with AI-driven solutions. Transform your brand, optimize campaigns, and increase customer engagement with Synthara’s cutting-edge marketing technology.</p>
+                <div class="cta-buttons">
+                    <a href="#about" class="cta">Explore Our Vision</a>
+                    <a href="#marketing" class="cta">Discover Our Digital Marketing Solutions</a>
+                </div>
+            </div>
         </section>
 
-        <!-- Newsletter Signup Section -->
-        <section class="newsletter">
-            <h3>Stay Updated!</h3>
-            <p>Sign up for our newsletter to receive the latest digital marketing tips and updates straight to your inbox.</p>
-            <form action="/subscribe" method="POST">
-                <input type="email" name="email" placeholder="Enter your email" required>
-                <button type="submit">Subscribe</button>
-            </form>
+        <section id="about" class="about-section">
+            <h2>About Synthara</h2>
+            <p>Synthara is at the forefront of AI-powered digital marketing. We specialize in using advanced AI technologies to optimize your marketing efforts. From personalized customer journeys to campaign performance predictions, we leverage AI to ensure your marketing strategies drive tangible results. Experience the future of marketing, today.</p>
         </section>
+
+        <section id="marketing" class="marketing-section">
+            <h2>Our Digital Marketing Solutions</h2>
+            <p>Our AI-powered digital marketing services cover a wide range of strategies to help your business grow. We utilize artificial intelligence to optimize campaigns, segment audiences, predict consumer behavior, and deliver personalized experiences that increase engagement and conversions.</p>
+            <div class="marketing-cards">
+                <div class="marketing-card">
+                    <img src="ai-marketing-image1.jpg" alt="AI Content Creation">
+                    <h3>AI-Driven Content Creation</h3>
+                    <p>Generate high-quality, SEO-friendly content that speaks directly to your audience. Our AI tools automate content creation, helping you save time while improving your reach.</p>
+                </div>
+                <div class="marketing-card">
+                    <img src="ai-marketing-image2.jpg" alt="Predictive Analytics">
+                    <h3>AI Predictive Analytics</h3>
+                    <p>Use data to predict trends and customer behavior. Our predictive analytics models help tailor your marketing strategies and deliver the right message at the right time.</p>
+                </div>
+                <div class="marketing-card">
+                    <img src="ai-marketing-image3.jpg" alt="AI Campaign Automation">
+                    <h3>AI Campaign Automation</h3>
+                    <p>Automate your digital marketing campaigns and improve efficiency. Our AI tools ensure that your campaigns are optimized, saving you time and money while boosting ROI.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="video" class="video-section">
+            <h2>See Synthara AI Marketing in Action</h2>
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Synthara AI Marketing Demo Video"></iframe>
+        </section>
+
+        <footer id="footer-placeholder"></footer>
     </main>
 
-    <!-- Footer Section (Loaded dynamically) -->
-    <div id="footer-container"></div>
+    <div id="chatbot">
+        <div id="chatbot-header">
+            Synthara Support
+        </div>
+        <div id="chatbot-messages">
+            <p>How can we assist you today?</p>
+        </div>
+        <div id="chatbot-input">
+            <input type="text" placeholder="Type your message..." />
+            <button>Send</button>
+        </div>
+    </div>
 
-    <script src="scripts.js"></script>
-
-    <!-- JavaScript to load header and footer dynamically -->
     <script>
-        // Function to load external HTML into a div
-        function loadHTML(file, elementId) {
-            fetch(file)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById(elementId).innerHTML = data;
-                })
-                .catch(error => console.error('Error loading file:', error));
-        }
+        // Load header and footer from external HTML files
+        fetch('../assets/components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
 
-        // Load header and footer dynamically
-        loadHTML('../assets/components/header.html', 'header-container');
-        loadHTML('../assets/components/footer.html', 'footer-container');
+        fetch('../assets/components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
     </script>
 </body>
 </html>

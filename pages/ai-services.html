@@ -7,199 +7,313 @@
     <link rel="stylesheet" href="../assets/css/styles.css">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
-            line-height: 1.6;
+            background-color: #111111;
+            color: #E0E0E0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        header, footer {
-            background-color: #232323;
-            color: #fff;
-            padding: 30px 0;
+        /* Hero Section */
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #8e2de2 30%, #4a00e0 100%);
+            padding: 150px 30px;
             text-align: center;
+            height: 100vh;
+            box-shadow: 0 0 60px rgba(255, 215, 0, 0.5);
+            animation: fadeIn 1.5s ease-in-out;
         }
 
-        main {
-            padding: 60px 20px;
-            max-width: 1200px;
+        .hero-content {
+            flex: 1;
+            max-width: 900px;
+        }
+
+        .hero-section h1 {
+            font-size: 5rem;
+            color: #FFD700;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px #FFD700, 0 0 25px #4a00e0;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero-section p {
+            font-size: 1.5rem;
+            color: #C0C0C0;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        /* Call-to-action Buttons */
+        .cta-buttons a {
+            margin: 20px;
+            padding: 18px 35px;
+            background: linear-gradient(45deg, #FFD700, #FF6347);
+            color: #000000;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.7);
+            transition: all 0.3s ease-in-out;
+            display: inline-block;
+        }
+
+        .cta-buttons a:hover {
+            background: linear-gradient(45deg, #FF6347, #FFD700);
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(255, 99, 71, 0.7);
+        }
+
+        /* About Section */
+        .about-section {
+            background-color: #1c1c1c;
+            padding: 100px 30px;
+            text-align: center;
+            color: #C0C0C0;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .about-section h2 {
+            font-size: 3.5rem;
+            color: #FFD700;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+        }
+
+        .about-section p {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            margin-bottom: 50px;
+            font-weight: 300;
+            max-width: 900px;
             margin: 0 auto;
         }
 
-        .ai-services {
-            background-color: #fff;
-            padding: 50px;
-            border-radius: 15px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            margin-bottom: 40px;
+        .about-section .highlight {
+            color: #FFD700;
+            font-weight: bold;
         }
 
-        .ai-services h1 {
-            font-size: 2.75rem;
-            color: #333;
+        /* Featured AI Services Section */
+        .services-section {
+            background-color: #333333;
+            padding: 100px 30px;
+            text-align: center;
+            color: #C0C0C0;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .services-section h2 {
+            font-size: 3.5rem;
+            color: #FFD700;
             margin-bottom: 25px;
+            text-transform: uppercase;
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
         }
 
-        .ai-services p {
-            font-size: 1.25rem;
-            color: #555;
-            margin-bottom: 35px;
+        .services-section p {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            margin-bottom: 50px;
+            font-weight: 300;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        .ai-services h2 {
-            font-size: 2rem;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .services-list {
-            list-style-type: none;
-            padding: 0;
-            margin-bottom: 35px;
-        }
-
-        .services-list li {
-            font-size: 1.2rem;
-            color: #555;
-            margin-bottom: 12px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 18px 35px;
-            background-color: #007BFF;
-            color: white;
-            text-decoration: none;
-            border-radius: 7px;
-            font-size: 1.25rem;
-            margin-top: 40px;
-            transition: background-color 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background-color: #0056b3;
-        }
-
-        .visual-inspiration {
-            background-color: #f4f4f9;
-            padding: 80px 20px;
+        .service-cards {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            justify-content: center;
+            gap: 40px;
             flex-wrap: wrap;
         }
 
-        .visual-inspiration p {
-            font-size: 1.6rem;
-            color: #333;
-            margin-bottom: 35px;
-            flex: 1;
-            max-width: 500px;
-        }
-
-        /* Added images to fill the space */
-        .image-placeholder {
-            background-image: url('https://via.placeholder.com/500x400'); /* Placeholder image URL */
-            background-size: cover;
-            background-position: center;
-            height: 400px;
-            width: 100%;
-            max-width: 500px;
+        .service-card {
+            background-color: #2e2e2e;
             border-radius: 15px;
-            margin-left: 20px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+            color: #FFD700;
+            margin-bottom: 30px;
         }
 
-        .image-right {
-            background-image: url('https://via.placeholder.com/500x400'); /* Placeholder image URL */
-            background-size: cover;
-            background-position: center;
-            height: 400px;
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #FFD700;
+        }
+
+        .service-card p {
+            font-size: 1.2rem;
+            color: #E0E0E0;
+            font-weight: 300;
+        }
+
+        .service-card img {
             width: 100%;
-            max-width: 500px;
-            border-radius: 15px;
-            margin-left: 20px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
         }
 
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Video Section */
+        .video-section {
+            background-color: #111111;
+            padding: 100px 30px;
+            text-align: center;
+            color: #C0C0C0;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .video-section h2 {
+            font-size: 3.5rem;
+            color: #FFD700;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+        }
+
+        .video-section iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 15px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #111111;
+            padding: 40px 30px;
+            text-align: center;
+            color: #C0C0C0;
+            font-size: 1.2rem;
+        }
+
+        .footer p {
+            font-size: 1.1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile responsiveness */
         @media (max-width: 768px) {
-            .visual-inspiration {
+            .service-cards {
                 flex-direction: column;
-                text-align: center;
+                align-items: center;
             }
 
-            .image-placeholder, .image-right {
-                max-width: 100%;
-                margin-top: 20px;
+            .service-card {
+                width: 80%;
             }
         }
     </style>
 </head>
 <body>
-    <div id="header-container"></div>
+    <div id="header-placeholder"></div>
 
     <main>
-        <section class="ai-services">
-            <h1>Welcome to Synthara: The Future, Powered by AI</h1>
-            <p>We are a youth-led team, many of us former athletes, all hailing from underrepresented communities. We understand the power of perseverance, teamwork, and ingenuity – values we bring into everything we do. We're driven by the same passion that fuels young athletes to push boundaries, now applying that drive to AI and healthcare.</p>
-
-            <h2>Meet Our Founder & Executives</h2>
-            <p>Synthara is led by a dynamic team of individuals who are not only passionate about AI but also come from diverse backgrounds, bringing unique perspectives to the table:</p>
-            <ul class="services-list">
-                <li><strong>Founder(Adaora):</strong> A 23-year-old Black woman with a Master's in Computer Science, leading the charge in AI innovation.</li>
-                <li><strong>Keith:</strong> Holds an MBA and brings a wealth of business and leadership knowledge to Synthara's operations.</li>
-                <li><strong>Kingsley:</strong> About to receive an MBA in Data Analytics, bringing valuable data-driven insights and strategies.</li>
-                <li><strong>Josiah Jeffrey:</strong> Soon to receive an MBA in Finance and Marketing, with a keen eye for business strategy and market expansion.</li>
-                <li><strong>Shae and Davion:</strong> Still in school, but with a passion for learning and driving future innovations in AI and technology.</li>
-            </ul>
-
-            <h2>What We Bring to the Table</h2>
-            <ul class="services-list">
-                <li>AI-Driven Branding that Evolves</li>
-                <li>Predictive Insights That Unveil Tomorrow</li>
-                <li>Personalized Content Creation</li>
-                <li>Automation That Learns and Grows with You</li>
-                <li>Reveal the True Essence of Your Brand</li>
-            </ul>
-
-            <h2>Our Core AI Services</h2>
-            <ul class="services-list">
-                <li>Creating AI-Powered Chatbots & Assistants</li>
-                <li>AI-Powered Health Insights & Reports</li>
-                <li>AI-Driven Content Generation for Public Health</li>
-                <li>AI for Misinformation Detection</li>
-                <li>AI for Health Data Accessibility</li>
-                <li>Healthcare Chatbots & Virtual Assistants</li>
-                <li>AI-Powered Health Trend Prediction</li>
-            </ul>
-
-            <a href="contact.html" class="cta-button">Discover What's Next</a>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Welcome to Synthara: The Future of AI</h1>
+                <p>Redefining industries with cutting-edge AI-driven solutions. Transform your business and stay ahead of the curve with Synthara's suite of intelligent services.</p>
+                <div class="cta-buttons">
+                    <a href="#about" class="cta">Explore Our Vision</a>
+                    <a href="#services" class="cta">Discover Our Services</a>
+                </div>
+            </div>
         </section>
+
+        <section id="about" class="about-section">
+            <h2>About Synthara</h2>
+            <p>Synthara is at the forefront of AI innovation. We specialize in providing intelligent, scalable solutions that empower businesses to unlock their full potential. From predictive analytics to automated systems, we bring AI technologies that drive success and efficiency. Harness the power of machine learning, deep learning, and natural language processing to elevate your operations.</p>
+        </section>
+
+        <section id="services" class="services-section">
+            <h2>Our AI Services</h2>
+            <p>We offer a wide range of AI solutions that cater to different industries, ensuring maximum impact on your business's performance. Whether you're looking to optimize your operations, enhance customer experiences, or safeguard your data, Synthara has the perfect AI solution for you.</p>
+            <div class="service-cards">
+                <div class="service-card">
+                    <img src="ai-services-image1.jpg" alt="AI Solutions">
+                    <h3>Predictive Analytics</h3>
+                    <p>Leverage historical data to make real-time business decisions. Our predictive analytics services help forecast trends, identify patterns, and optimize processes.</p>
+                </div>
+                <div class="service-card">
+                    <img src="ai-services-image2.jpg" alt="Automation">
+                    <h3>AI Automation</h3>
+                    <p>Automate repetitive tasks and streamline your workflow with AI-driven automation tools. Increase efficiency and reduce operational costs.</p>
+                </div>
+                <div class="service-card">
+                    <img src="ai-services-image3.jpg" alt="Cybersecurity">
+                    <h3>AI-Powered Cybersecurity</h3>
+                    <p>Protect your business from cyber threats with AI-driven security solutions. Our cybersecurity tools are designed to detect and mitigate threats before they impact your systems.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="video" class="video-section">
+            <h2>See Synthara in Action</h2>
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Synthara AI Demo Video"></iframe>
+        </section>
+
+        <footer id="footer-placeholder"></footer>
     </main>
 
-    <section class="visual-inspiration">
-        <p>The story of your brand is just beginning. Where will it take you? Discover endless possibilities with our AI-powered solutions.</p>
-        <div class="image-placeholder"></div>
-        <div class="image-right"></div>
-    </section>
-
-    <div id="footer-container"></div>
-
-    <script src="../assets/js/scripts.js"></script>
+    <div id="chatbot">
+        <div id="chatbot-header">
+            Synthara Support
+        </div>
+        <div id="chatbot-messages">
+            <p>How can we assist you today?</p>
+        </div>
+        <div id="chatbot-input">
+            <input type="text" placeholder="Type your message..." />
+            <button>Send</button>
+        </div>
+    </div>
 
     <script>
-        function loadHTML(file, elementId) {
-            fetch(file)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById(elementId).innerHTML = data;
-                })
-                .catch(error => console.error('Error loading file:', error));
-        }
+        // Load header and footer from external HTML files
+        fetch('../assets/components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
 
-        loadHTML('../assets/components/header.html', 'header-container');
-        loadHTML('../assets/components/footer.html', 'footer-container');
+        fetch('../assets/components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
     </script>
 </body>
 </html>

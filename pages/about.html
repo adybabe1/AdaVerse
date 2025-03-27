@@ -3,381 +3,450 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - AdaVerse</title>
-    <link rel="stylesheet" href="../assets/css/styles.css">  <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="../assets/css/chatbot.css">  <!-- Chatbot Stylesheet -->
+    <title>About - AdaVerse</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/chatbot.css">
     <style>
-        /* Enhanced styling for the About Us page */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #111111;
+    color: #E0E0E0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
 
-        header, footer {
-            background-color: #232323;
-            color: #fff;
-            padding: 15px;
-            text-align: center;
-        }
+/* Hero Section */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #8e2de2 30%, #4a00e0 100%);
+    padding: 150px 30px;
+    text-align: center;
+    height: 100vh;
+    box-shadow: 0 0 60px rgba(255, 215, 0, 0.5);
+    animation: fadeIn 1.5s ease-in-out;
+}
 
-        .hero-section {
-            background: url('../assets/images/hero-banner.jpg') center/cover no-repeat;
-            padding: 80px 20px;
-            color: white;
-            text-align: center;
-            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
-        }
+.hero-content {
+    flex: 1;
+    max-width: 900px;
+}
 
-        .hero-section h1 {
-            font-size: 3rem;
-            margin: 0 0 20px;
-        }
+.hero-section h1 {
+    font-size: 5rem;
+    color: #FFD700;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px #FFD700, 0 0 25px #4a00e0;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
 
-        .hero-section p {
-            font-size: 1.25rem;
-            margin: 0 0 30px;
-        }
+.hero-section p {
+    font-size: 1.5rem;
+    color: #C0C0C0;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
 
-        .cta-buttons a {
-            margin: 10px;
-            padding: 12px 24px;
-            background-color: #007BFF;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: background-color 0.3s ease;
-        }
+/* Call-to-action Buttons */
+.cta-buttons a {
+    margin: 20px;
+    padding: 18px 35px;
+    background: linear-gradient(45deg, #FFD700, #FF6347);
+    color: #000000;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    box-shadow: 0 10px 40px rgba(255, 215, 0, 0.7);
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+}
 
-        .cta-buttons a:hover {
-            background-color: #0056b3;
-        }
+.cta-buttons a:hover {
+    background: linear-gradient(45deg, #FF6347, #FFD700);
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(255, 99, 71, 0.7);
+}
 
-        .about-us {
-            padding: 60px 20px;
-            text-align: center;
-            background-color: #fff;
-            color: #333;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            margin-top: -40px;
-        }
+/* About Section */
+.about-section {
+    background-color: #1c1c1c;
+    padding: 100px 30px;
+    text-align: center;
+    color: #C0C0C0;
+    animation: fadeIn 1.5s ease-in-out;
+}
 
-        .about-us h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
+.about-section h2 {
+    font-size: 3.5rem;
+    color: #FFD700;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
 
-        .about-us p {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
+.about-section p {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    margin-bottom: 50px;
+    font-weight: 300;
+    max-width: 900px;
+    margin: 0 auto;
+}
 
-        .leadership-team {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 40px;
-        }
+.about-section .highlight {
+    color: #FFD700;
+    font-weight: bold;
+}
 
-        .team-member {
-            width: 250px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
+/* Footer */
+.footer {
+    background-color: #111111;
+    padding: 40px 30px;
+    text-align: center;
+    color: #C0C0C0;
+    font-size: 1.2rem;
+}
 
-        .team-member:hover {
-            transform: scale(1.05);
-        }
+.footer p {
+    font-size: 1.1rem;
+}
 
-        .team-member img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 4px solid #007BFF;
-            margin-bottom: 15px;
-        }
+/* Chatbot Styles */
+#chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 330px;
+    height: 420px;
+    background: #222222;
+    border-radius: 15px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.5s ease-in-out;
+}
 
-        .team-member h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: #007BFF;
-        }
+#chatbot-header {
+    background: #333333;
+    padding: 15px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 15px 15px 0 0;
+}
 
-        .team-member p {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 20px;
-        }
+#chatbot-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    color: #fff;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
 
-        .cta-button {
-            padding: 15px 30px;
-            background-color: #007BFF;
-            color: white;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-top: 20px;
-            display: inline-block;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: background-color 0.3s ease;
-        }
+#chatbot-input {
+    display: flex;
+    padding: 15px;
+    background: #333333;
+    border-radius: 0 0 15px 15px;
+}
 
-        .cta-button:hover {
-            background-color: #0056b3;
-        }
+#chatbot-input input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: #444;
+    color: #fff;
+    font-size: 1rem;
+}
 
-        /* Chatbot Window */
-        .chatbot-window {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #007BFF;
-            color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            width: 280px;
-            display: none;
-            flex-direction: column;
-            overflow: hidden;
-        }
+#chatbot-input button {
+    padding: 12px 18px;
+    background: #FF6347;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 12px;
+    transition: all 0.3s ease;
+}
 
-        .chatbot-header {
-            padding: 10px;
-            background-color: #0056b3;
-            text-align: center;
-            font-weight: bold;
-        }
+#chatbot-input button:hover {
+    background: #FFD700;
+    transform: scale(1.05);
+}
 
-        .chatbot-body {
-            padding: 10px;
-            flex: 1;
-            overflow-y: auto;
-        }
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        .chatbot-input {
-            display: flex;
-            padding: 10px;
-            background-color: #f1f1f1;
-        }
+/* Team Section */
+.team-section {
+    background-color: #1c1c1c;
+    padding: 100px 30px;
+    text-align: center;
+    color: #C0C0C0;
+    animation: fadeIn 1.5s ease-in-out;
+}
 
-        .chatbot-input input {
-            width: 80%;
-            padding: 8px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
+/* Team Section Header */
+.team-section h2 {
+    font-size: 3.5rem;
+    color: #FFD700;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+/* Highlighted keywords in Team Section */
+.team-section .highlight-keyword {
+    font-weight: bold;
+    color: #FFD700;
+    background-color: #333333;
+    padding: 0 5px;
+    border-radius: 5px;
+}
 
-        .chatbot-input button {
-            width: 15%;
-            padding: 10px;
-            background-color: #0056b3;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
 
-        .open-chatbot-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #007BFF;
-            color: white;
-            font-size: 18px;
-            border-radius: 50%;
-            padding: 12px;
-            border: none;
-            cursor: pointer;
-        }
+/* Team Section Description */
+.team-section p {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    margin-bottom: 50px;
+    font-weight: 300;
+    max-width: 900px;
+    margin: 0 auto;
+}
 
-        footer {
-            margin-top: auto;
-        }
+/* Card Layout */
+.team-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers the cards horizontally */
+    gap: 40px; /* Space between cards */
+    margin-top: 50px;
+    align-items: center;
+}
 
-        .team-member img.placeholder {
-            background: #ddd;
-            border: 3px solid #ddd;
-        }
+/* Individual Card */
+.team-card {
+    background-color: #2e2e2e;
+    border-radius: 15px;
+    padding: 30px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(255, 215, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    color: #FFD700;
+}
 
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .hero-section h1 {
-                font-size: 2.2rem;
-            }
+/* Card Hover Effect */
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(255, 215, 0, 0.4);
+}
 
-            .cta-buttons a {
-                padding: 10px 20px;
-                font-size: 1rem;
-            }
+/* Card Title */
+.team-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #FFD700;
+}
 
-            .leadership-team {
-                justify-content: center;
-                gap: 20px;
-            }
+/* Card Description */
+.team-card p {
+    font-size: 1.2rem;
+    color: #E0E0E0;
+    font-weight: 300;
+}
 
-            .team-member {
-                width: 180px;
-            }
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .team-cards {
+        flex-direction: column;
+        align-items: center;
+    }
 
-            .team-member img {
-                height: 180px;
-            }
+    .team-card {
+        width: 80%; /* Make cards take up more width on smaller screens */
+        margin-bottom: 20px; /* Add space between cards on smaller screens */
+    }
+}
 
-            .team-member h3 {
-                font-size: 1.2rem;
-            }
 
-            .team-member p {
-                font-size: 0.9rem;
-            }
-        }
     </style>
+    
 </head>
 <body>
-    <!-- Header Section (Loaded dynamically) -->
-    <div id="header-container"></div>
+
+    <!-- Include header dynamically -->
+    <div id="header-placeholder"></div>
 
     <main>
-
+        <!-- Hero Section -->
         <section class="hero-section">
-            <h1>Welcome to AdaVerse</h1>
-            <p>Your partner in AI-powered marketing and branding solutions.</p>
-            <div class="cta-buttons">
-                <a href="about-us.html">Learn More</a>
-                <a href="contact-us.html">Contact Us</a>
+            <div class="hero-content">
+                <h1>Shaping the Future of Innovation</h1>
+                <p>Empowering businesses with advanced AI solutions that push the boundaries of what's possible.</p>
+                <div class="cta-buttons">
+                    <a href="../pages/ai-services.html" class="cta-button">Explore Our Solutions</a>
+                    <a href="../pages/contact.html" class="cta-button">Get in Touch</a>
+                </div>
             </div>
         </section>
 
-        <section class="about-us">
-            <h1>About AdaVerse</h1>
-            <p>AdaVerse is a leading AI-powered marketing and branding company helping businesses elevate their brand presence, accelerate growth, and innovate with cutting-edge AI strategies.</p>
-
-            <h2>Leadership Team</h2>
-            <div class="leadership-team">
-                <div class="team-member">
-                    <img src="../assets/images/leadership-photos/adaora.jpg" alt="Adaora">
-                    <h3>Adaora (CEO)</h3>
-                    <p>A visionary combining AI innovation and business acumen to drive success and global impact.</p>
-                </div>
-                <div class="team-member">
-                    <img src="../assets/images/leadership-photos/keith.jpg" alt="Keith">
-                    <h3>Keith (COO)</h3>
-                    <p>Oversees day-to-day operations, ensuring smooth execution of AdaVerse’s business strategies.</p>
-                </div>
-                <div class="team-member">
-                    <img src="../assets/images/leadership-photos/tylen.jpg" alt="Tylen">
-                    <h3>Tylen (CTO)</h3>
-                    <p>Drives AI infrastructure development, ensuring AdaVerse stays at the forefront of technology.</p>
-                </div>
-                <div class="team-member">
-                    <img src="../assets/images/leadership-photos/jeffrey.jpg" alt="Jeffrey">
-                    <h3>Jeffrey (CMO & VP of Finance)</h3>
-                    <p>Blends creativity and strategy to build AdaVerse's brand presence and financial stability.</p>
-                </div>
-                <div class="team-member">
-                    <img src="../assets/images/leadership-photos/josiah.jpg" alt="Josiah">
-                    <h3>Josiah (CFO & VP of Marketing)</h3>
-                    <p>Manages financial operations and marketing strategies to drive profitability and growth.</p>
-                </div>
-                <div class="team-member">
-                    <img src="../assets/images/leadership-photos/kingsley.jpg" alt="Kingsley">
-                    <h3>Kingsley (CDO)</h3>
-                    <p>Leads the digital transformation strategy at AdaVerse, driving innovative technology solutions to enhance customer experiences.</p>
-                </div>
-                <div class="team-member">
-                    <img src="../assets/images/leadership-photos/jshaela.jpg" alt="J'shaela">
-                    <h3>J'shaela (Marketing Director)</h3>
-                    <p>Leads AdaVerse’s marketing strategies, driving brand awareness and engagement.</p>
-                </div>
-                <div class="team-member">
-                    <img src="../assets/images/leadership-photos/davion.jpg" alt="Davion">
-                    <h3>Davion (VP of Sales)</h3>
-                    <p>Oversees sales strategies and growth, ensuring AdaVerse meets its targets and expands its reach.</p>
-                </div>
-            </div>
-            <a href="ai-services.html" class="cta-button">Explore AI Services</a>
+        <!-- About Section -->
+        <section class="about-section">
+            <h2>About AdaVerse</h2>
+            <p>At AdaVerse, we're not just another tech company. We are pioneers on a mission to reshape industries and redefine what it means to <span class="highlight">innovate</span>. Our <span class="highlight">goal</span> is simple: create groundbreaking, scalable <span class="highlight">AI</span> solutions that empower businesses to grow, adapt, and thrive in an ever-changing digital landscape.</p>
+            <p>Founded by a group of passionate <span class="highlight">innovators</span>, AdaVerse combines the best of AI, automation, and human-centered design. We believe that technology should be intuitive, powerful, and accessible – and we’re here to make that a reality.</p>
+            <p>With a strong focus on the <span class="highlight">future</span>, we’re building a digital ecosystem that drives lasting change. Whether through advanced AI-driven tools or transformative branding strategies, we are leading the way into the next era of technological excellence.</p>
         </section>
+        
+        
+        <section class="team-section">
+            <h2>Our Youth-Led, Diverse Team</h2>
+            <p>AdaVerse is proud to be led by a team of highly <span class="highlight-keyword">motivated</span>, driven young professionals from diverse backgrounds. Many of us hold advanced degrees in our respective fields, with a deep passion for <span class="highlight-keyword">innovation</span>, and growth. But what truly sets us apart is the <span class="highlight-keyword">leadership</span> experience we’ve gained through athletics.</p>
+            <p>Our team is not only equipped with cutting-edge technical skills but also with the <span class="highlight-keyword">resilience</span>, teamwork, and <span class="highlight-keyword">leadership</span> qualities honed on the field and court. We are united by our desire to break new ground in the tech space while fostering a culture of <span class="highlight-keyword">collaboration</span>, creativity, and continuous improvement.</p>
+            <p>With our combined expertise, energy, and vision, AdaVerse is poised to lead the next generation of tech advancements.</p>
+        </section>
+        
+                     
+
+<!-- Executive Leadership Section -->
+<section class="team-section">
+    <h2>Meet Our Executive Leadership</h2>
+    <p>Our leadership team is a dynamic group of young innovators, blending expertise in technology, business strategy, and creative marketing. With backgrounds in athletics, leadership, and cutting-edge technology, we bring a unique competitive edge to every challenge.</p>
+    <div class="team-cards">
+        <div class="team-card">
+            <h3>Adaora (CEO & Founder)</h3>
+            <p>Visionary leader with a background in software engineering, cybersecurity, and athletics, driving the company’s mission and innovation.</p>
+        </div>
+        <div class="team-card">
+            <h3>Keith (COO)</h3>
+            <p>Strategic operations expert ensuring efficient execution of business plans while leveraging leadership skills from competitive sports.</p>
+        </div>
+        <div class="team-card">
+            <h3>Tylen (CTO)</h3>
+            <p>Tech innovator specializing in AI development, leading our technological vision and infrastructure.</p>
+        </div>
+        <div class="team-card">
+            <h3>Jeffrey (CMO & VP of Finance)</h3>
+            <p>Marketing strategist and financial planner, combining expertise in branding with financial growth strategies.</p>
+        </div>
+        <div class="team-card">
+            <h3>Josiah (CFO & VP of Marketing)</h3>
+            <p>Finance and marketing leader managing company budgeting, forecasting, and innovative outreach campaigns.</p>
+        </div>
+        <div class="team-card">
+            <h3>Kingsley (CDO)</h3>
+            <p>Data and digital transformation expert, leveraging analytics to drive business intelligence and innovation.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- Team Members Section -->
+<section class="team-section">
+    <h2>Meet Support Team</h2>
+    <p>Our whole team is young, diverse, and led by individuals who bring strong leadership experience in both tech and athletics. At AdaVerse, we believe that innovation thrives when individuals from different backgrounds and experiences come together.</p>
+    <div class="team-cards">
+        <div class="team-card">
+            <h3> J'shaela</h3> (Marketing Director)</h3>
+            <p>Leading the marketing team with a focus on developing and executing creative campaigns and strategies.</p>
+        </div>
+        <div class="team-card">
+            <h3>Davion (VP of Sales)</h3>
+            <p>Driving sales efforts, managing the sales pipeline, and generating revenue for the company.</p>
+        </div>
+    </div>
+</section>
+
     </main>
 
-    <!-- Footer Section (Loaded dynamically) -->
-    <div id="footer-container"></div>
+    <!-- Include footer dynamically -->
+    <div id="footer-placeholder"></div>
 
-    <!-- Chatbot Window -->
-    <div class="chatbot-window" id="chatbot-window">
-        <div class="chatbot-header">
-            <span class="close-btn" onclick="closeChatbot()">&times;</span>
-            <h3>How can I assist you today?</h3>
+    <!-- Chatbot -->
+    <div id="chatbot">
+        <div id="chatbot-header">Synthara AI</div>
+        <div id="chatbot-messages">
+            <!-- Chat messages will be displayed here -->
         </div>
-        <div class="chatbot-body">
-            <div class="messages" id="chatbot-messages">
-                <!-- Chat messages will appear here -->
-            </div>
-            <div class="chatbot-input">
-                <input type="text" id="chatbot-input" placeholder="Type your message..." onkeydown="sendMessage(event)" />
-                <button id="send-btn" onclick="sendMessage()">Send</button>
-            </div>
+        <div id="chatbot-input">
+            <input type="text" id="user-message" placeholder="Ask me something..." />
+            <button id="send-button">Send</button>
         </div>
     </div>
 
-    <!-- Chatbot Button (Triggers Chatbot Window) -->
-    <button class="open-chatbot-btn" onclick="openChatbot()">💬</button>
-
-    <!-- JavaScript to load header and footer dynamically -->
     <script>
-        // Function to load external HTML into a div
-        function loadHTML(file, elementId) {
-            fetch(file)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById(elementId).innerHTML = data;
-                })
-                .catch(error => console.error('Error loading file:', error));
-        }
+        // Load Header dynamically
+        fetch("../assets/components/header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header-placeholder").innerHTML = data;
+            });
 
-        // Load header and footer dynamically
-        loadHTML('../assets/components/header.html', 'header-container');
-        loadHTML('../assets/components/footer.html', 'footer-container');
+        // Load Footer dynamically
+        fetch("../assets/components/footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
 
         // Chatbot functionality
-        function openChatbot() {
-            document.getElementById("chatbot-window").style.display = "flex";
+        const chatbotMessages = document.getElementById('chatbot-messages');
+        const sendButton = document.getElementById('send-button');
+        const userMessageInput = document.getElementById('user-message');
+
+        function appendMessage(message, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add(sender);
+            messageDiv.innerText = message;
+            chatbotMessages.appendChild(messageDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
         }
 
-        function closeChatbot() {
-            document.getElementById("chatbot-window").style.display = "none";
-        }
+        sendButton.addEventListener('click', function () {
+            const userMessage = userMessageInput.value.trim();
+            if (userMessage) {
+                appendMessage(userMessage, 'user');
+                userMessageInput.value = '';
 
-        function sendMessage(event) {
-            if (event.key === 'Enter' || event.type === 'click') {
-                const input = document.getElementById("chatbot-input");
-                const message = input.value.trim();
-                if (message) {
-                    const messagesDiv = document.getElementById("chatbot-messages");
-                    const userMessage = document.createElement("div");
-                    userMessage.className = "message user";
-                    userMessage.textContent = message;
-                    messagesDiv.appendChild(userMessage);
-                    input.value = ''; // Clear the input
-
-                    // Simulate bot response
-                    setTimeout(() => {
-                        const botMessage = document.createElement("div");
-                        botMessage.className = "message bot";
-                        botMessage.textContent = "Thank you for reaching out! How can I assist you further?";
-                        messagesDiv.appendChild(botMessage);
-                    }, 1000);
-                }
+                // Simulate chatbot response
+                setTimeout(function () {
+                    const botResponse = `You asked: ${userMessage}`;
+                    appendMessage(botResponse, 'bot');
+                }, 1000);
             }
-        }
+        });
+
+        // Allow Enter key to send message
+        userMessageInput.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                sendButton.click();
+            }
+        });
     </script>
 </body>
 </html>

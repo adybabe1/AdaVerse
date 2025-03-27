@@ -7,76 +7,91 @@
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="../assets/css/chatbot.css">
     <style>
-        /* Updated styles for improved layout */
+        /* 7 Billion Dollar Look */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Futura', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            background-color: #0f0f0f;
+            color: #E0E0E0;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
 
+        /* Hero Section */
         .hero-section {
             display: flex;
             align-items: center;
             justify-content: center;
-            background: url('../assets/images/hero-banner.jpg') center/cover no-repeat;
+            background: linear-gradient(135deg, #4b0082 30%, #1a1a1a 100%);
             padding: 80px 20px;
-            color: white;
             text-align: center;
-            height: 500px; 
+            height: 600px;
             margin-bottom: 60px;
+            box-shadow: 0 0 40px #FFD700;
+            animation: fadeIn 2s ease-out;
         }
 
         .hero-content {
             flex: 1;
-            text-align: center;
             max-width: 800px;
         }
 
         .hero-section h1 {
-            font-size: 3rem;
-            margin: 0 0 20px;
+            font-size: 4rem;
+            color: #FFD700;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px #FFD700, 0 0 20px #4B0082;
         }
 
         .hero-section p {
-            font-size: 1.25rem;
-            margin: 0 0 30px;
+            font-size: 1.5rem;
+            color: #C0C0C0;
+            font-weight: 300;
         }
 
         .cta-buttons a {
             margin: 15px;
             padding: 15px 30px;
-            background-color: #007BFF;
-            color: white;
+            background: linear-gradient(45deg, #FFD700, #FF6347);
+            color: #000000;
             text-decoration: none;
             border-radius: 8px;
             font-weight: bold;
             font-size: 1.1rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.5);
+            transition: all 0.3s ease-in-out;
+            display: inline-block;
         }
 
         .cta-buttons a:hover {
-            background-color: #0056b3;
+            background: linear-gradient(45deg, #FF6347, #FFD700);
             transform: translateY(-3px);
+            box-shadow: 0 0 25px #FF6347;
         }
 
+        /* Text animation for the hero section */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Image & Text Section */
         .image-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 60px;
-            padding: 20px;
+            padding: 60px 20px;
+            background: #1E1E1E;
+            box-shadow: 0 0 30px #FFD700;
         }
 
         .image-container img {
-            width: 350px;
-            height: 350px;
+            width: 450px;
+            height: 450px;
             object-fit: cover;
-            border: 8px solid #007BFF;
+            border: 6px solid #FFD700;
             border-radius: 12px;
             margin-right: 30px;
         }
@@ -88,144 +103,157 @@
 
         .text-container h2 {
             font-size: 2.5rem;
-            margin-bottom: 20px;
+            color: #FFD700;
+            text-shadow: 0 0 15px #FFD700;
         }
 
         .text-container p {
             font-size: 1.125rem;
             line-height: 1.6;
-            margin-bottom: 40px;
+            color: #C0C0C0;
         }
 
+        /* Chatbot Styling */
         .chatbot-window {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: #007BFF;
-            color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            background-color: #2C2C2C;
             width: 300px;
+            height: 400px;
+            border-radius: 10px;
             display: none;
-            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             overflow: hidden;
-            z-index: 1000;
+            z-index: 9999;
         }
 
         .chatbot-header {
-            padding: 15px;
-            background-color: #0056b3;
+            background-color: #4B0082;
+            color: #fff;
+            padding: 10px;
             text-align: center;
             font-weight: bold;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            font-size: 20px;
+            color: #fff;
+            cursor: pointer;
         }
 
         .chatbot-body {
-            padding: 15px;
-            flex: 1;
-            overflow-y: auto;
+            padding: 10px;
+            height: 290px;
+            overflow-y: scroll;
+            background-color: #1E1E1E;
         }
 
         .chatbot-input {
             display: flex;
             padding: 10px;
-            background-color: #f1f1f1;
+            background-color: #333;
         }
 
         .chatbot-input input {
             width: 80%;
-            padding: 12px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            font-size: 1rem;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
         }
 
         .chatbot-input button {
-            width: 15%;
-            padding: 12px;
-            background-color: #0056b3;
-            color: white;
+            padding: 8px 12px;
             border: none;
-            border-radius: 6px;
+            background-color: #FFD700;
+            color: #000;
+            font-weight: bold;
+            border-radius: 5px;
             cursor: pointer;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-
-        .chatbot-input button:hover {
-            background-color: #003d7a;
-            transform: translateY(-2px);
         }
 
         .open-chatbot-btn {
             position: fixed;
-            bottom: 20px;
+            bottom: 80px;
             right: 20px;
-            background-color: #007BFF;
-            color: white;
-            font-size: 24px;
+            background-color: #4B0082;
+            color: #fff;
+            padding: 15px;
             border-radius: 50%;
-            padding: 18px;
+            font-size: 20px;
             border: none;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            z-index: 10000;
         }
 
         .open-chatbot-btn:hover {
-            background-color: #0056b3;
-            transform: translateY(-3px);
+            background-color: #FF6347;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Section (Loaded dynamically) -->
+    <!-- Header (Keep Exactly as Before) -->
     <div id="header-container"></div>
 
     <main>
         <section class="hero-section">
             <div class="hero-content">
-                <h1>Transform Your Brand, Revolutionize Your Future with AdaVerse</h1>
-                <p>AI-driven marketing, branding, and automation solutions that set businesses apart.</p>
+                <h1>The Future of Innovation Starts Here</h1>
+                <p>AI-driven branding and automation, engineered for those who lead the future.</p>
                 <div class="cta-buttons">
-                    <a href="../pages/ai-services.html" class="cta-button">Discover Synthara</a>
-                    <a href="../pages/contact.html" class="cta-button">Get Started</a>
+                    <a href="../pages/ai-services.html" class="cta-button">Discover AdaVerse</a>
+                    <a href="../pages/contact.html" class="cta-button">Join Us</a>
                 </div>
             </div>
         </section>
 
-        <!-- Image and Text Section -->
+        <!-- Image & Text Section -->
         <section class="image-container">
-            <img src="../assets/images/hero-image.jpg" alt="Image Description">
+            <img src="../assets/images/hero-image.jpg" alt="Visionary Image">
             <div class="text-container">
-                <h2>Our Vision for the Future</h2>
-                <p>At AdaVerse, we envision a world where AI meets creativity to drive innovation. Join us in revolutionizing industries and unlocking new possibilities for businesses worldwide.</p>
+                <h2>Pioneering the Next Era</h2>
+                <p>Redefining the way technology and creativity merge. Our leadership envisions a world where AI transforms industries, one breakthrough at a time.</p>
             </div>
+        </section>
+
+        <!-- Additional Creative Content Section -->
+        <section class="image-container">
+            <div class="text-container">
+                <h2>Your Future, Powered by AdaVerse</h2>
+                <p>From cutting-edge AI technology to unparalleled design and automation, AdaVerse is poised to revolutionize your business. We build the solutions that not only meet but exceed the expectations of tomorrow's digital landscape.</p>
+            </div>
+            <img src="../assets/images/vision-image.jpg" alt="Future Vision Image">
         </section>
     </main>
 
-    <!-- Footer Section (Loaded dynamically) -->
+    <!-- Footer (Keep Exactly as Before) -->
     <div id="footer-container"></div>
 
-    <!-- Chatbot Window -->
+    <!-- Chatbot -->
     <div class="chatbot-window" id="chatbot-window">
         <div class="chatbot-header">
             <span class="close-btn" onclick="closeChatbot()">&times;</span>
             <h3>How can I assist you today?</h3>
         </div>
-        <div class="chatbot-body">
-            <div class="messages" id="chatbot-messages"></div>
-            <div class="chatbot-input">
-                <input type="text" id="chatbot-input" placeholder="Type your message..." onkeydown="sendMessage(event)" />
-                <button id="send-btn" onclick="sendMessage()">Send</button>
-            </div>
+        <div class="chatbot-body" id="chatbot-messages">
+            <!-- Messages will appear here -->
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbot-input" placeholder="Type your message..." onkeydown="if(event.key === 'Enter'){sendMessage()}">
+            <button onclick="sendMessage()">Send</button>
         </div>
     </div>
 
-    <!-- Chatbot Button (Triggers Chatbot Window) -->
+    <!-- Chatbot Button -->
     <button class="open-chatbot-btn" onclick="openChatbot()">💬</button>
 
-    <!-- JavaScript to load header and footer dynamically -->
+    <!-- Dynamic Header & Footer Loading -->
     <script>
         function loadHTML(file, elementId) {
             fetch(file)
@@ -236,12 +264,35 @@
                 .catch(error => console.error('Error loading file:', error));
         }
 
-        // Load header and footer dynamically
         loadHTML('../assets/components/header.html', 'header-container');
         loadHTML('../assets/components/footer.html', 'footer-container');
+
+        // Chatbot functionality
+        function openChatbot() {
+            document.getElementById("chatbot-window").style.display = "block";
+        }
+
+        function closeChatbot() {
+            document.getElementById("chatbot-window").style.display = "none";
+        }
+
+        function sendMessage() {
+            const messageInput = document.getElementById("chatbot-input");
+            const messageText = messageInput.value;
+            if (messageText.trim() !== "") {
+                const messageElement = document.createElement("p");
+                messageElement.textContent = "You: " + messageText;
+                document.getElementById("chatbot-messages").appendChild(messageElement);
+                messageInput.value = "";
+                // Simulate a bot response
+                setTimeout(() => {
+                    const botResponse = document.createElement("p");
+                    botResponse.textContent = "Bot: How can I help you with that?";
+                    document.getElementById("chatbot-messages").appendChild(botResponse);
+                }, 1000);
+            }
+        }
     </script>
 
-    <!-- JavaScript for Chatbot functionality -->
-    <script src="../assets/js/chatbot.js"></script>
 </body>
 </html>
