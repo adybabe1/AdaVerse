@@ -75,8 +75,8 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 For any inquiries, feel free to reach out:
 
-- **Website**: [adaverse.com](https://adaverse.com)
-- **Email**: [contact@adaverse.com](mailto\:contact@adaverse.com)
+- **Website**: [adaverse.tech](https://adaverse.tech)
+- **Email**: [getintouch@adaverse.tech](mailto\:getintouch@adaverse.tech)
 - **Social Media**: [LinkedIn](#) | [Twitter](#) | [Instagram](#)
 
 Thank you for visiting Adaverse!
